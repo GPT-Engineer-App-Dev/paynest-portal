@@ -2,15 +2,15 @@ import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const TestimonialCard = ({ quote, author, role, avatar }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md">
-    <p className="text-gray-600 mb-4">"{quote}"</p>
+  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+    <p className="text-gray-700 mb-4 italic">"{quote}"</p>
     <div className="flex items-center">
       <Avatar className="h-10 w-10 mr-4">
         <AvatarImage src={avatar} alt={author} />
         <AvatarFallback>{author[0]}</AvatarFallback>
       </Avatar>
       <div>
-        <p className="font-semibold">{author}</p>
+        <p className="font-semibold text-gray-800">{author}</p>
         <p className="text-sm text-gray-500">{role}</p>
       </div>
     </div>
@@ -34,8 +34,8 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 px-6 md:px-10 bg-gray-50">
-      <h2 className="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+    <section id="testimonials" className="py-20 px-6 md:px-10 bg-white">
+      <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">What Our Customers Say</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {testimonials.map((testimonial, index) => (
           <TestimonialCard key={index} {...testimonial} />
